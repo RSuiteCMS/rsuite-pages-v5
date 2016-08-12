@@ -1,0 +1,6 @@
+{{#if view.model}}
+	<p>Looking at {{view.model.finalManagedObject.displayName}} (uri: {{view.model.canonicalUri}})</p>
+	<pre>{{view.jsonContent}}</pre>
+{{else}}
+	Please go to the Content tab and select an object to examine.
+{{/if}}

@@ -1,0 +1,4 @@
+<messages group="@pluginId@/activity">
+	<message name="tooltip">Example of adding a new tab</message>
+	<message name="label">Demo</message>
+</messages>

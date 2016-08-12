@@ -1,0 +1,4 @@
+<messages group="@pluginId@/inspect">
+	<message name="title">JSON Details</message>
+	<message name="header-content">Looking at %@1 (uri: %@2)</message>
+</messages>

@@ -1,0 +1,69 @@
+<rsuite-plugin id="@pluginId@" version="rincewind-SNAPSHOT at 2016-08-12 13:38:828 EDT" description="Demo of various methods of creating a page in RSuite">
+	<extensionProvider id="rsuite.TransformationProvider">
+		<transformationProvider type="pages.ProgrammaticTransformationDemo" />
+		<namedPreviewTransformer      mimeType="text/html"
+		                         transformName="pages.XSLTTransformationDemo"
+		                        previewXsltUri="rsuite:/res/plugin/@pluginId@/xslt-transformation-demo.xsl"
+		/>
+	</extensionProvider>
+
+
+	<extensionProvider id="rsuite.WebService">
+		<staticWebService path="/WebContent" root="/@pluginId@"/>
+		<remoteApiDefinition handler="pages.RAPIDemo" id="pages.RAPIDemo"/>
+	</extensionProvider>
+
+	<extensionProvider id="rsuite.UI">
+
+
+		<!-- Common, useful stuff:
+			Defines the Pages namespace, and three Views
+		 -->
+		<scriptInclude src="/@pluginId@/Pages.js" />
+
+		<!-- "New Tab" example
+			Defines Pages.Activity
+		-->
+		<messageTable src="/@pluginId@/Pages/Activity.xml" />
+		<scriptInclude src="/@pluginId@/Pages/Activity.js" />
+		<styleInclude src="/@pluginId@/Pages/Activity.less" />
+
+		<!-- Static page example -->
+		<scriptInclude src="/@pluginId@/Pages/Static.js" />
+
+		<!-- Inspect page example -->
+		<messageTable src="/@pluginId@/Pages/Inspector.xml" />
+		<scriptInclude src="/@pluginId@/Pages/Inspector.js" />
+		<styleInclude src="/@pluginId@/Pages/Inspector.less" />
+
+	</extensionProvider>
+
+	<extensionProvider id="rsuite.ContextMenu">
+		<contextMenuRuleSet>
+			<menuItemList>
+	            <menuItem actionName="pages:static" label="Static resource">
+					<property name="rsuite-path" value="Pages" />
+	            </menuItem>
+				<menuItem actionName="rsuite:preview" label="XSL Transform">
+					<property name="transform" value="pages.XSLTTransformationDemo" />
+					<property name="rsuite-path" value="Pages" />
+				</menuItem>
+				<menuItem actionName="rsuite:preview" label="Java Transform">
+					<property name="transform" value="pages.ProgrammaticTransformationDemo" />
+					<property name="rsuite-path" value="Pages" />
+				</menuItem>
+				<menuItem actionName="rsuite:invokeWebservice" label="Remote API call">
+					<property name="remoteApiName" value="pages.RAPIDemo" />
+					<property name="rsuite-path" value="Pages" />
+					<property name="useTransport" value="window" />
+				</menuItem>
+				<menuItem actionName="pages:inspector" label="RSuite Inspector">
+					<property name="rsuite-path" value="Pages" />
+				</menuItem>
+				<menuItem actionName="pages:activity" label="RSuite Activity">
+					<property name="rsuite-path" value="Pages" />
+				</menuItem>
+			</menuItemList>
+		</contextMenuRuleSet>
+	</extensionProvider>
+</rsuite-plugin>

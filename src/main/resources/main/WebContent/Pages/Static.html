@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<!-- Simplest bootstrap page for having RSuite.services available -->
+	<head>
+		<meta charset="utf-8" />
+		<title>Simple HTML Page</title>
+		<!-- Necessary for RSuite.url() to work correctly -->
+		<meta data-context-path="/rsuite-cms/" />
+		<script src="/rsuite-cms/rsuite.js"></script>
+		<link
+			type="text/css"
+			rel="stylesheet/less"
+			href="/rsuite/rest/v2/stylesheets?contextPath=/rsuite-cms"
+		/>
+		<style>
+			body {
+				display: flex;
+				flex-direction: column;
+			}
+			body>pre {
+				overflow: auto;
+				flex: 1 1 auto;
+			}
+			body>p {
+				flex: 0 0 auto;
+			}
+		</style>
+		<script src="/rsuite-cms/scripts/lib/less-1.5.1.js"></script>
+	</head>
+	<body>
+		<p>
+		Static HTML page with the simplest method of pulling in RSuite, containing all of RSuite's available views and libraries.<br /><br />
+		Here's a ManagedObject.
+		</p>
+		<script>
+			var query = RSuite.serial.query.parse(location.search.replace(/^\?/, ''));
+			var cdo = RSuite.model.ManagedObject.getCached(query.id);
+			cdo.done(function () {
+				var obj = {},
+					mo = cdo.get('finalManagedObject');
+				for (var key in mo) {
+					obj[key] = mo.get(key);
+				};
+				$('<pre>').text(JSON.stringify(mo, null, 4)).appendTo(document.body);
+			});
+		</script>
+	</body>
+</html>
