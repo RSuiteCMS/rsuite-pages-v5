@@ -1,4 +1,4 @@
-<rsuite-plugin id="@pluginId@" version="rincewind-SNAPSHOT at 2016-08-12 13:38:828 EDT" description="Demo of various methods of creating a page in RSuite">
+<rsuite-plugin id="@pluginId@" version="@pluginVersion@ at @timeStamp@" description="Demo of various methods of creating a page in RSuite">
 	<extensionProvider id="rsuite.TransformationProvider">
 		<transformationProvider type="pages.ProgrammaticTransformationDemo" />
 		<namedPreviewTransformer      mimeType="text/html"
