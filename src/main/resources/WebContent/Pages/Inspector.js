@@ -89,7 +89,7 @@ RSuite.Action({
 	invoke: function (context) {
 		var managedObject = Ember.get(context, 'managedObject');
 		RSuite.controller.setProperties({
-			detailsObjectType: managedObject.controller.toString(),
+			detailsObjectType: managedObject.constructor.toString(),
 			detailsObjectId: managedObject.get('key'),
 			detailsViewClass: 'Pages.Inspect'
 		});

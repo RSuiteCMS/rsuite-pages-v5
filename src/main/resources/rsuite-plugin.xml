@@ -44,6 +44,7 @@
 	            <menuItem actionName="pages:static" label="Static resource">
 					<property name="rsuite-path" value="Pages" />
 	            </menuItem>
+	            <!-- Presently not working...
 				<menuItem actionName="rsuite:preview" label="XSL Transform">
 					<property name="transform" value="pages.XSLTTransformationDemo" />
 					<property name="rsuite-path" value="Pages" />
@@ -57,6 +58,7 @@
 					<property name="rsuite-path" value="Pages" />
 					<property name="useTransport" value="window" />
 				</menuItem>
+				-->
 				<menuItem actionName="pages:inspector" label="RSuite Inspector">
 					<property name="rsuite-path" value="Pages" />
 				</menuItem>
