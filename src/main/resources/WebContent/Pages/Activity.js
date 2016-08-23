@@ -40,8 +40,14 @@ Pages.Activity.Controller.reopen({
 				return JSON.stringify(obj, null, 4);
 			}.property('model.finalManagedObject.loadState')
 		}),
-	//If you wanted to make a left sidebar, that's named `navigationView`
-
+	//These three will define a simple sidebar view.
+	navigationTitleOpenBinding: 'RSuite.messageTable.@pluginId@/activity/nagivation/opened',
+	navigationTitleClosedBinding: 'RSuite.messageTable.@pluginId@/activity/nagivation/closed',
+	navigationView: Ember.View.extend()
+		.named('Pages.Activity.Controller#navigationView')
+		.reopen({
+			template: Ember.Handlebars.compile('Nothing here at the moment')
+		}),
 
 	// Basic URI handling:
 	// Holds the current URI location

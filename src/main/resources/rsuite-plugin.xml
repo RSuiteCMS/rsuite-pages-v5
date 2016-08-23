@@ -38,6 +38,23 @@
 
 	</extensionProvider>
 
+	<extensionProvider id="rsuite.Forms">
+		<formDefinition name="test">
+			<column>
+				<param formControlType="checkbox" name="test">
+					<optionList>
+						<option value="one" label="One" />
+						<option value="two" label="Two" />
+						<option value="three" label="Three" />
+					</optionList>
+					<valueList>
+						<value>two</value>
+					</valueList>
+				</param>
+			</column>
+		</formDefinition>
+	</extensionProvider>
+
 	<extensionProvider id="rsuite.ContextMenu">
 		<contextMenuRuleSet>
 			<menuItemList>
@@ -55,8 +72,7 @@
 				</menuItem>
 				<menuItem actionName="rsuite:invokeWebservice" label="Remote API call">
 					<property name="remoteApiName" value="pages.RAPIDemo" />
-					<property name="rsuite-path" value="Pages" />
-					<property name="useTransport" value="window" />
+					<property name="formId" value="test" />
 				</menuItem>
 				-->
 				<menuItem actionName="pages:inspector" label="RSuite Inspector">
@@ -64,6 +80,14 @@
 				</menuItem>
 				<menuItem actionName="pages:activity" label="RSuite Activity">
 					<property name="rsuite-path" value="Pages" />
+				</menuItem>
+			</menuItemList>
+		</contextMenuRuleSet>
+		<contextMenuRuleSet scope="system">
+			<menuItemList>
+				<menuItem actionName="rsuite:invokeWebservice" label="Remote API call">
+					<property name="remoteApiName" value="pages.RAPIDemo" />
+					<property name="formId" value="test" />
 				</menuItem>
 			</menuItemList>
 		</contextMenuRuleSet>

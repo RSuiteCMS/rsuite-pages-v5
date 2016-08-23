@@ -1,4 +1,8 @@
 <messages group="@pluginId@/activity">
 	<message name="tooltip">Example of adding a new tab</message>
 	<message name="label">Demo</message>
+	<messages group="navigation">
+		<message name="opened">Click to shut the sidebar</message>
+		<message name="closed">Click to open the sidebar</message>
+	</messages>
 </messages>
